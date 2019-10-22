@@ -1,0 +1,100 @@
+<html>
+
+    <head>
+        <meta charset="utf8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link
+            href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;subset=cyrillic,cyrillic-ext,devanagari,greek,greek-ext,latin-ext,vietnamese"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            canvas {
+                display: block;
+                margin: 0 auto;
+            }
+    
+            h1 {
+                padding: 20px;
+                text-align: center;
+            }
+    
+            body {
+                font-family: 'Noto Sans', sans-serif;
+            }
+        </style>
+    </head>
+
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <h1>Ծրագրավորում III Ստեփանակերտ</h1>
+            </tr>
+            <tr>
+                <h1>Ջհանգիրյան Արտյոմ</h1>
+            </tr>
+            <tr>
+                    <td>Exanak</td>
+                    <td id="weather"></td>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Գույն</th>
+                <th scope="col">Նկարագրություն</th>
+                <th scope="col">Ծնվել է</th>
+                <th scope="col">Այս պահին կա</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td scope="row" style="background-color:green;"></td>
+                <td>Խոտ, բազմանում է 8 ցիկլը մեկ: Սնունդ է խոտակերի համար: Չի կարողանում շարժվել:</td>
+                <td id="grassCount"></td>
+                <td id="grassLiveCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="row" style="background-color:yellow;"></td>
+                <td>Սա խոտակերն է: Խոտակերը ուտում է խոտ: Բազմանում է 5 անգամ խոտ ուտելով: Մեռնում է եթե չի ուտում խոտ 25 քայլից հետո: Այն շարժվում է դատարկ վանդակների բոլոր 8 ուղություններով` մեկ քայլով:</td>
+                <td id="grassEaterCount"></td>
+                <td id="grassEaterLiveCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td scope="row" style="background-color:red;"></td>
+                <td>Սա գիշատիչն է: Գիշատիչը ուտում է խոտակերին և խմում է ջուր: Բազմանում է 3 անգամ խոտակեր ուտելով: Մեռնում է, եթե չի ուտում խոտակերին 20 քայլից հետո: Այն շարժվում է դատարկ վանդակների բոլոր 8 ուղություններով` մեկ քայլով:</td>
+                <td id="gishatichCount"></td>
+                <td id="gishatichLiveCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td scope="row" style="background-color:blue;"></td>
+                <td>Սա մարդն է: Մարդը սպանում է գիշատիչին: Բազմանում է 6 անգամ գիշատիչ ուտելով: Մեռնում է, եթե չի ուտում գիշատիչ 50 քայլից հետո: Նա կարողանում է  շարժվել դատարկ վանդակների բոլոր ուղղություններով` երկու քայլով:</td>
+                <td id="mardCount"></td>
+                <td id="mardLiveCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td scope="row" style="background-color:purple;"></td>
+                <td>Սա մաֆիան է: Մաֆիան անում է շատ վատ գործ: Սպանում է մարդուն, և ուտում է գիշատիչին: Բազմանում է 7 անգամ մարդ սպանելով:) Մեռնում է, եթե չի սպանում մարդ 35 քայլից հետո: Նա շարժվում է դատարկ վանդակների ողղահայաց և հորիզոնական ուղղություններով` մեկ կամ երկու քայլերով:    </td>
+                <td id="mafiaCount"></td>
+                <td id="mafiaLiveCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td scope="row" style="background-color:#4da6ff"></td>
+                <td>Սա ջուրն է: Ջուրն վերացնում է խոտին: Բազմանում է 3 անգամ խոտ ուտելով: Մեռնում է, եթե չի ուտում խոտ 10 քայլից հետո: Այն շարժվում է դատարկ վանդակների բոլոր 8 ուղություններով` մեկ քայլով:    </td>
+                <td id="waterCount"></td>
+                <td id="waterLiveCount"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
